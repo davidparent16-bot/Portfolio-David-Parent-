@@ -1,5 +1,5 @@
 # Portfolio David Parent
 
-Site statique pret a publier avec GitHub Pages.
+Portfolio David Parent.
 
 La page principale est `index.html`.
