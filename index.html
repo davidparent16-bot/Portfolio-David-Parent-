@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>David Parent | Directeur de transformation commerciale</title>
+  <meta name="description" content="Portfolio professionnel de David Parent — Directeur de transformation commerciale. Pharma, retail, medtech, réseaux de soin, cosmétique.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#080b09; --bg2:#0e1410; --bg3:#141c17;
+      --teal:#1db68a; --teal-d:#0f6e56; --amber:#f5a623;
+      --white:#f0ede8; --gray:#8a9490; --border:rgba(29,182,138,0.15);
+      --font-display:'Barlow Condensed',sans-serif;
+      --font-body:'Barlow',sans-serif;
+      --font-mono:'JetBrains Mono',monospace;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--bg);
+      color:var(--white);
+      font-family:var(--font-body);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+    /* NAV */
+    .nav{
+      position:sticky;top:0;z-index:100;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:16px 24px;background:rgba(8,11,9,.92);
+      backdrop-filter:blur(12px);border-bottom:1px solid var(--border);
+      transition:box-shadow .3s;
+    }
+    .nav-logo{
+      font-family:var(--font-display);font-weight:700;letter-spacing:.12em;
+      text-transform:uppercase;font-size:1.1rem;
+    }
+    .nav-logo span{color:var(--teal)}
+    .nav-links{display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+    .nav-links a{
+      font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;
+      text-transform:uppercase;color:var(--gray);transition:color .2s;
+    }
+    .nav-links a:hover{color:var(--teal)}
+    .nav-print{
+      font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;
+      text-transform:uppercase;color:var(--gray);background:none;border:1px solid var(--border);
+      padding:6px 12px;border-radius:6px;cursor:pointer;transition:all .2s;
+    }
+    .nav-print:hover{color:var(--teal);border-color:var(--teal)}
+
+    /* HERO */
+    .hero{
+      min-height:92vh;display:flex;align-items:center;position:relative;
+      padding:72px 0 56px
+    }
+    .hero-grid{
+      position:absolute;inset:0;
+      background-image:linear-gradient(rgba(29,182,138,.05) 1px, transparent 1px),
+                       linear-gradient(90deg, rgba(29,182,138,.05) 1px, transparent 1px);
+      background-size:64px 64px;pointer-events:none;opacity:.55;
+      animation:gridpulse 8s ease-in-out infinite;
+    }
+    @keyframes gridpulse{0%,100%{opacity:.4}50%{opacity:.65}}
+    .hero-inner{position:relative;z-index:1}
+    .hero-tag{
+      font-family:var(--font-mono);font-size:.72rem;letter-spacing:.15em;
+      text-transform:uppercase;color:var(--teal);margin-bottom:18px;
+      display:flex;align-items:center;gap:10px;
+    }
+    .hero-tag::before{content:'';display:inline-block;width:28px;height:1px;background:var(--teal)}
+    .hero-title{
+      font-family:var(--font-display);font-weight:900;
+      font-size:clamp(3.4rem,8vw,7.8rem);
+      line-height:.92;text-transform:uppercase;letter-spacing:-.02em;
+      margin-bottom:18px;max-width:12ch
+    }
+    .hero-title .accent{color:var(--teal)}
+    .hero-subtitle{
+      font-family:var(--font-display);font-weight:300;
+      font-size:clamp(1.1rem,2vw,1.8rem);
+      text-transform:uppercase;color:var(--gray);max-width:34rem;
+      margin-bottom:28px
+    }
+    .hero-text{
+      max-width:48rem;font-size:1.02rem;color:#d6d1c9;margin-bottom:34px;
+      border-left:2px solid var(--teal);padding-left:18px;
+    }
+    .kpis{
+      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;margin-bottom:32px
+    }
+    .kpi{
+      background:var(--bg2);border:1px solid var(--border);
+      padding:18px 16px;border-radius:12px;
+      transition:transform .2s,border-color .2s;
+    }
+    .kpi:hover{transform:translateY(-3px);border-color:var(--teal)}
+    .kpi-val{
+      font-family:var(--font-display);font-size:2rem;font-weight:700;
+      color:var(--teal);line-height:1
+    }
+    .kpi-label{
+      font-family:var(--font-mono);font-size:.65rem;letter-spacing:.1em;
+      text-transform:uppercase;color:var(--gray);margin-top:8px
+    }
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:12px 22px;border-radius:10px;border:1px solid var(--border);
+      font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;
+      text-transform:uppercase;transition:all .2s;
+    }
+    .btn.primary{background:var(--teal);color:#03110d;border-color:var(--teal)}
+    .btn.primary:hover{filter:brightness(1.1);transform:translateY(-1px)}
+    .btn.secondary{background:transparent;color:var(--white)}
+    .btn.secondary:hover{border-color:var(--teal);color:var(--teal)}
+
+    /* SECTIONS */
+    section{padding:82px 0;border-top:1px solid rgba(255,255,255,.04)}
+    .section-tag{
+      font-family:var(--font-mono);font-size:.72rem;letter-spacing:.15em;
+      text-transform:uppercase;color:var(--teal);margin-bottom:12px;
+      display:flex;align-items:center;gap:10px;
+    }
+    .section-tag::before{content:'';display:inline-block;width:20px;height:1px;background:var(--teal)}
+    .section-title{
+      font-family:var(--font-display);font-weight:700;
+      font-size:clamp(2.2rem,4.5vw,4rem);text-transform:uppercase;
+      line-height:.96;margin-bottom:28px
+    }
+
+    /* CARDS */
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .card{
+      background:var(--bg2);border:1px solid var(--border);
+      padding:28px 24px;border-radius:16px;
+      transition:transform .2s,border-color .2s;
+    }
+    .card:hover{transform:translateY(-4px);border-color:rgba(29,182,138,.4)}
+    .card-icon{font-size:1.6rem;margin-bottom:14px}
+    .card h3{
+      font-family:var(--font-display);font-size:1.35rem;text-transform:uppercase;
+      margin-bottom:10px
+    }
+    .card p{color:#d2cbc1;font-size:.96rem}
+    .metric{
+      margin-top:14px;font-family:var(--font-mono);font-size:.68rem;
+      letter-spacing:.08em;text-transform:uppercase;color:var(--amber);
+      border-top:1px solid rgba(245,166,35,.2);padding-top:10px;margin-top:14px;
+    }
+
+    /* MISSIONS */
+    .missions{display:grid;gap:12px}
+    .mission{
+      background:var(--bg2);border:1px solid var(--border);border-radius:14px;
+      padding:24px;transition:border-color .2s;
+    }
+    .mission:hover{border-color:rgba(29,182,138,.4)}
+    .mission-top{
+      display:grid;grid-template-columns:180px 1fr 140px;gap:16px;align-items:start
+    }
+    .mission-date{
+      font-family:var(--font-mono);font-size:.72rem;color:var(--gray);
+      padding-top:4px;
+    }
+    .mission-company{
+      font-family:var(--font-display);font-size:1.3rem;font-weight:700;
+      text-transform:uppercase;margin-bottom:4px
+    }
+    .mission-role{color:var(--gray);font-size:.92rem}
+    .mission-kpi{
+      font-family:var(--font-display);font-size:1.8rem;font-weight:700;
+      color:var(--teal);text-align:right;line-height:1;
+    }
+    .mission-kpi-label{
+      font-family:var(--font-mono);font-size:.6rem;letter-spacing:.08em;
+      color:var(--gray);text-align:right;text-transform:uppercase;margin-top:4px;
+    }
+    .mission-body{
+      margin-top:14px;color:#d2cbc1;border-top:1px solid rgba(255,255,255,.05);
+      padding-top:14px;
+    }
+    .mission-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .tag{
+      font-family:var(--font-mono);font-size:.62rem;letter-spacing:.08em;
+      text-transform:uppercase;padding:4px 10px;border-radius:20px;
+      background:rgba(29,182,138,.1);border:1px solid rgba(29,182,138,.2);color:var(--teal);
+    }
+
+    /* COMPETENCES */
+    .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:8px}
+    .skill-row{display:flex;flex-direction:column;gap:6px}
+    .skill-label{
+      display:flex;justify-content:space-between;
+      font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);
+    }
+    .skill-label span:last-child{color:var(--teal)}
+    .skill-bar{height:4px;background:rgba(29,182,138,.12);border-radius:4px;overflow:hidden}
+    .skill-fill{height:100%;background:var(--teal);border-radius:4px;width:0;transition:width 1.2s ease}
+
+    /* FOOTER */
+    .footer{
+      padding:32px 0 48px;border-top:1px solid var(--border);
+      display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+      align-items:center;
+    }
+    .footer strong{font-family:var(--font-display);font-size:1.2rem;text-transform:uppercase}
+    .footer span{font-style:italic;color:var(--amber)}
+    .footer-links{display:flex;gap:16px}
+    .footer-links a{
+      font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;
+      text-transform:uppercase;color:var(--gray);transition:color .2s;
+      display:flex;align-items:center;gap:6px;
+    }
+    .footer-links a:hover{color:var(--teal)}
+
+    /* SCROLL REVEAL */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* PRINT */
+    @media print{
+      .nav,.nav-print{display:none}
+      body{background:#fff;color:#000}
+      section{border-top:1px solid #ddd}
+      .hero{min-height:auto;padding:32px 0}
+      .hero-grid{display:none}
+      .card,.mission,.kpi{border:1px solid #ddd}
+      :root{--teal:#0a6e4f;--gray:#555;--white:#111;--bg:#fff;--bg2:#f9f9f9}
+    }
+
+    /* RESPONSIVE */
+    @media (max-width:900px){
+      .kpis,.grid-3{grid-template-columns:1fr 1fr}
+      .mission-top{grid-template-columns:1fr}
+      .mission-kpi{text-align:left}
+      .mission-kpi-label{text-align:left}
+      .skills-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      .nav-links{display:none}
+      .kpis,.grid-3{grid-template-columns:1fr}
+      .hero{min-height:auto;padding:52px 0}
+      .hero-title{max-width:none}
+      .skills-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="nav-logo">David <span>Parent</span></div>
+    <div class="nav-links">
+      <a href="#profil">Profil</a>
+      <a href="#resultats">Résultats</a>
+      <a href="#missions">Missions</a>
+      <a href="#competences">Compétences</a>
+      <a href="#methodes">Méthodes</a>
+      <a href="#contact">Contact</a>
+      <button class="nav-print" onclick="window.print()">⎙ Imprimer</button>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-tag">Directeur de transformation commerciale</div>
+        <h1 class="hero-title">Je transforme <span class="accent">la performance</span> des organisations en mutation.</h1>
+        <div class="hero-subtitle">Pharma · Retail · Medtech · Réseaux de soin · Cosmétique</div>
+        <p class="hero-text">
+          J'interviens quand une organisation doit reprendre de la clarté, du rythme et des résultats.
+          Mon approche : diagnostiquer les résistances, construire la coalition, produire des victoires rapides,
+          puis ancrer durablement le changement.
+        </p>
+
+        <div class="kpis">
+          <div class="kpi">
+            <div class="kpi-val">+25%</div>
+            <div class="kpi-label">CA chez Alcura</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-val">×2</div>
+            <div class="kpi-label">CA chez Boehringer</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-val">20</div>
+            <div class="kpi-label">BU créées chez Louise</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-val">94,7%</div>
+            <div class="kpi-label">Satisfaction clients</div>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn primary" href="#missions">↓ Voir mon parcours</a>
+          <a class="btn secondary" href="mailto:david.parent16@outlook.fr">✉ Me contacter</a>
+          <a class="btn secondary" href="https://linkedin.com/in/davidparent60500" target="_blank" rel="noopener">↗ LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFIL -->
+    <section id="profil">
+      <div class="wrap">
+        <div class="section-tag reveal">Profil</div>
+        <h2 class="section-title reveal">Un profil terrain,<br>structuré par le MBA.</h2>
+        <div class="grid-3">
+          <div class="card reveal">
+            <div class="card-icon">🎯</div>
+            <h3>Terrain</h3>
+            <p>Vingt ans de pilotage d'équipes, de sites et de réseaux dans des environnements exigeants et multi-actoriels.</p>
+            <div class="metric">Management de proximité · Exécution · Discipline opérationnelle</div>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon">⚡</div>
+            <h3>Transformation</h3>
+            <p>Capacité à relancer, redresser et repositionner une activité commerciale avec une lecture fine des résistances.</p>
+            <div class="metric">Diagnostic · Coalition · Quick wins · Ancrage</div>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon">📐</div>
+            <h3>Méthode</h3>
+            <p>Le MBA a formalisé une pratique déjà éprouvée : comprendre pourquoi une organisation change, ou résiste.</p>
+            <div class="metric">Lewin · Kotter · Autissier appliqués au réel</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RÉSULTATS -->
+    <section id="resultats">
+      <div class="wrap">
+        <div class="section-tag reveal">Résultats</div>
+        <h2 class="section-title reveal">Des résultats concrets,<br>pas des intentions.</h2>
+        <div class="grid-3">
+          <div class="card reveal">
+            <div class="card-icon">🏥</div>
+            <h3>Alcura Alliance Healthcare</h3>
+            <p>10 sites en déséquilibre, 150 collaborateurs, plan sur 3 ans — progression durable de la performance via le Plan Oxygène.</p>
+            <div class="metric">+25% CA · 94,7% satisfaction · 18M€ P&L</div>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon">🥖</div>
+            <h3>Boulangerie Louise</h3>
+            <p>Structuration from scratch de 20 centres de profit et construction d'un modèle duplicable à l'échelle du réseau.</p>
+            <div class="metric">20 BU · 225 collaborateurs · 31M€ P&L</div>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon">💊</div>
+            <h3>Boehringer / IBSA</h3>
+            <p>Création et redressement d'unités dans des marchés concurrentiels avec logique de quick wins et montée en puissance.</p>
+            <div class="metric">CA doublé · 30% PDM · Redressement validé</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSIONS -->
+    <section id="missions">
+      <div class="wrap">
+        <div class="section-tag reveal">Missions</div>
+        <h2 class="section-title reveal">Parcours sélectionné.</h2>
+        <div class="missions">
+
+          <div class="mission reveal">
+            <div class="mission-top">
+              <div class="mission-date">2022 — 2024</div>
+              <div>
+                <div class="mission-company">Boehringer / IBSA</div>
+                <div class="mission-role">Directeur régional — Création et redressement de BU pharmaceutiques</div>
+              </div>
+              <div>
+                <div class="mission-kpi">×2</div>
+                <div class="mission-kpi-label">Croissance CA</div>
+              </div>
+            </div>
+            <div class="mission-body">
+              Mise en mouvement rapide, ciblage des segments prioritaires, quick wins dès les 90 premiers jours,
+              puis structuration complète pour installer une performance durable dans des marchés à forte concurrence.
+            </div>
+            <div class="mission-tags">
+              <span class="tag">Pharma</span>
+              <span class="tag">Quick wins</span>
+              <span class="tag">Redressement</span>
+              <span class="tag">BU</span>
+            </div>
+          </div>
+
+          <div class="mission reveal">
+            <div class="mission-top">
+              <div class="mission-date">2017 — 2022</div>
+              <div>
+                <div class="mission-company">Alcura Alliance Healthcare</div>
+                <div class="mission-role">Directeur régional — 10 sites · 150 collaborateurs · 18M€ de P&L</div>
+              </div>
+              <div>
+                <div class="mission-kpi">+25%</div>
+                <div class="mission-kpi-label">Croissance CA</div>
+              </div>
+            </div>
+            <div class="mission-body">
+              Plan Oxygène : diagnostic 90 jours, coalition Codir, déploiement par vagues et amélioration durable
+              de l'organisation. Résultats mesurés sur 3 ans avec un taux de satisfaction client record de 94,7%.
+            </div>
+            <div class="mission-tags">
+              <span class="tag">Medtech</span>
+              <span class="tag">Multi-sites</span>
+              <span class="tag">Plan Oxygène</span>
+              <span class="tag">Kotter</span>
+            </div>
+          </div>
+
+          <div class="mission reveal">
+            <div class="mission-top">
+              <div class="mission-date">2011 — 2016</div>
+              <div>
+                <div class="mission-company">Boulangerie Louise</div>
+                <div class="mission-role">Directeur réseau — 20 BU · 225 collaborateurs · 31M€ de P&L</div>
+              </div>
+              <div>
+                <div class="mission-kpi">20 BU</div>
+                <div class="mission-kpi-label">Créées from scratch</div>
+              </div>
+            </div>
+            <div class="mission-body">
+              Construction du modèle à partir de zéro, structuration des process, recrutement, intégration
+              et pilotage multi-sites dans un environnement retail à forte intensité opérationnelle.
+            </div>
+            <div class="mission-tags">
+              <span class="tag">Retail</span>
+              <span class="tag">Réseau</span>
+              <span class="tag">From scratch</span>
+              <span class="tag">Multi-sites</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPÉTENCES -->
+    <section id="competences">
+      <div class="wrap">
+        <div class="section-tag reveal">Compétences</div>
+        <h2 class="section-title reveal">Maîtrise opérationnelle.</h2>
+        <div class="skills-grid" id="skills-grid">
+          <div class="skill-row reveal">
+            <div class="skill-label"><span>Management d'équipes</span><span>95%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+          </div>
+          <div class="skill-row reveal">
+            <div class="skill-label"><span>Pilotage P&L multi-sites</span><span>92%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+          </div>
+          <div class="skill-row reveal">
+            <div class="skill-label"><span>Conduite du changement</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-row reveal">
+            <div class="skill-label"><span>Développement commercial</span><span>88%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-row reveal">
+            <div class="skill-label"><span>Diagnostic organisationnel</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-row reveal">
+            <div class="skill-label"><span>Structuration réseau</span><span>88%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-row reveal">
+            <div class="skill-label"><span>Stratégie & MBA</span><span>82%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+          </div>
+          <div class="skill-row reveal">
+            <div class="skill-label"><span>Secteur Pharma / Medtech</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÉTHODES -->
+    <section id="methodes">
+      <div class="wrap">
+        <div class="section-tag reveal">Méthodes</div>
+        <h2 class="section-title reveal">La théorie après le terrain.</h2>
+        <div class="grid-3">
+          <div class="card reveal">
+            <div class="card-icon">🔄</div>
+            <h3>Lewin</h3>
+            <p>Décristalliser, bouger, ancrer. Une lecture simple et opérationnelle du changement réel, appliquée sur le terrain avant d'être formalisée par le MBA.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon">🏗</div>
+            <h3>Kotter</h3>
+            <p>Créer l'urgence, bâtir la coalition, produire des victoires visibles, légitimer le mouvement. Un cadre qui colle à la réalité des grandes organisations.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon">🗺</div>
+            <h3>Autissier</h3>
+            <p>Cartographier les résistances et les acteurs avant de construire le plan d'action. La cartographie des parties prenantes comme outil de pilotage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-tag reveal">Contact</div>
+        <h2 class="section-title reveal">Je cherche un projet,<br>pas un poste.</h2>
+        <p class="hero-text reveal">
+          Si une organisation doit retrouver du souffle, de la clarté et de la performance,
+          je peux apporter une méthode éprouvée et un pilotage concret. Disponible pour une mission,
+          un mandat ou une collaboration structurée.
+        </p>
+        <div class="cta-row reveal" style="margin-top:24px">
+          <a class="btn primary" href="mailto:david.parent16@outlook.fr">✉ david.parent16@outlook.fr</a>
+          <a class="btn secondary" href="https://linkedin.com/in/davidparent60500" target="_blank" rel="noopener">↗ Profil LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div class="wrap footer">
+    <div><strong>David <span>Parent</span></strong></div>
+    <div class="footer-links">
+      <a href="mailto:david.parent16@outlook.fr">✉ david.parent16@outlook.fr</a>
+      <a href="https://linkedin.com/in/davidparent60500" target="_blank" rel="noopener">↗ LinkedIn</a>
+    </div>
+    <div style="font-family:var(--font-mono);font-size:.65rem;color:var(--gray)">© 2025 David Parent</div>
+  </div>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          // Animate skill bars on reveal
+          const fills = e.target.querySelectorAll('.skill-fill');
+          fills.forEach(f => {
+            f.style.width = f.dataset.width + '%';
+          });
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Also trigger skill bars if already visible on load
+    document.querySelectorAll('.skill-fill').forEach(f => {
+      const bar = f.closest('.skill-row');
+      if (bar && bar.classList.contains('visible')) {
+        f.style.width = f.dataset.width + '%';
+      }
+    });
+
+    // Nav shadow on scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.nav');
+      nav.style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,.5)' : '';
+    });
+  </script>
+</body>
+</html>
