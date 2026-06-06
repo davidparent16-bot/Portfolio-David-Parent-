@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #f5f5f0;
+    color: #0a0a0a;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: #f5e642;
+    color: #0a0a0a;
+  }
+}
+
+@layer components {
+  .brutal-border {
+    border: 2px solid #0a0a0a;
+  }
+  .brutal-border-thick {
+    border: 3px solid #0a0a0a;
+  }
+  .brutal-shadow {
+    box-shadow: 4px 4px 0px #0a0a0a;
+  }
+  .brutal-shadow-lg {
+    box-shadow: 8px 8px 0px #0a0a0a;
+  }
+  .brutal-btn {
+    @apply brutal-border brutal-shadow px-6 py-3 font-mono font-bold uppercase tracking-wider transition-all duration-150 cursor-pointer;
+  }
+  .brutal-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #0a0a0a;
+  }
+  .brutal-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #0a0a0a;
+  }
+}
